@@ -49,7 +49,7 @@ function getUsers(){
 slack.call({
     url: '/users.list',
     success: handleSlackUsers,
-    error: handleUsersError
+    error: handleUsersError,
     complete: getUsers,
 })
 }
@@ -58,7 +58,7 @@ function getChannels(){
 slack.call({
     url: '/channels.list',
     success:handleChannels,
-    error: handleChannelsError
+    error: handleChannelsError,
     complete: getChannels,
 })
 }
