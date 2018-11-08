@@ -27,19 +27,45 @@ function handleChannels(result){
     }
 }
 
+function handleUsersComplete(){
+    setTimeout(getUsers, 5000)
+}
 
+function handleChannelsComplete(){
+    setTimeout(getChannels, 5000)
+}
+
+function handleUsersError(){
+    console.log("error")
+}
+
+function handleChannelsError(){
+    console.log("error")
+}
+
+
+
+function getUsers(){
 slack.call({
     url: '/users.list',
-    success:handleSlackUsers, 
+    success: handleSlackUsers,
+    error: handleUsersError
+    complete: getUsers,
 })
+}
 
+function getChannels(){
 slack.call({
     url: '/channels.list',
     success:handleChannels,
+    error: handleChannelsError
+    complete: getChannels,
 })
+}
 
-
-
-
+getUsers();
+getChannels();
+//setTimeout(getUsers, 10000)
+//setTimeout(getChannels, 10000)
 
 })()
