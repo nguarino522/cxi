@@ -1,0 +1,36 @@
+#main {
+    min-height: 100px;
+    border: 1px solid #ccc;
+    margin-top: 24px;
+}
+
+a,
+a:hover {
+    color: #199ED9;
+}
+
+.padding-top {
+    padding-top: 30px;
+}
+
+.fade {
+    opacity: .5;
+}
+
+.dark {
+    background: #222;
+    color: #eee;
+}
+
+.dark .card {
+    border: none;
+    background: none;
+}
+
+.dark .card-header {
+    background: #444;
+}
+
+.dark .list-group-item {
+    background: #333;
+}
